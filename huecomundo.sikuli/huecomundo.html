@@ -1,0 +1,112 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>huecomundo.sikuli</h2> <a href="huecomundo.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">def</span> wait_for(images, time):
+    <span class="kw">for</span> t <span class="kw">in</span> range(time):
+        <span class="kw">for</span> image <span class="kw">in</span> images:
+            <span class="kw">if</span> exists(image, <span class="dig">0</span>):
+                <span class="kw">return</span> image
+        <span class="kw">else</span>:
+            <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="kw">else</span>:
+        <span class="kw">return</span> None
+
+
+hover(<img src="1533067526354.png" />)
+hover(<img src="1533395374405.png" />)
+<span class="skw">click</span>(<img src="1533067560801.png" />)
+
+stages = [<img src="1533067606592.png" />, <img src="1533067821635.png" />, <img src="1533068039145.png" />, <img src="1533393889163.png" />, <img src="1533393901811.png" />, <img src="1533393910947.png" />, <img src="1533393919042.png" />, <img src="1533393929706.png" />, <img src="1533393950242.png" />, <img src="1533393960802.png" />, <img src="1533393970507.png" />, <img src="1533393997802.png" />, <img src="1533394009466.png" />, <img src="1533394019763.png" />, <img src="1533394030955.png" />]
+
+<span class="kw">for</span> stage <span class="kw">in</span> stages:
+    <span class="kw">if</span> exists(stage):
+        <span class="skw">click</span>(stage)
+        <span class="skw">click</span>(<img src="1533067626777.png" />)
+        image = wait_for([<img src="1533067876913.png" />, <img src="1533395581996.png" />], <span class="dig">120</span>)
+        <span class="kw">if</span> image <span class="kw">is</span> <span class="kw">not</span> None:
+            <span class="kw">if</span> image == <img src="1533395581996.png" />:
+                <span class="skw">click</span>(image)
+                <span class="kw">break</span>
+
+            <span class="kw">if</span> image == <img src="1533067876913.png" />:
+                <span class="skw">click</span>(image)
+                <span class="skw">click</span>(<img src="1533068223577.png" />)
+                <span class="skw">click</span>(<img src="1533067756761.png" />)
+        <span class="kw">else</span>:
+            <span class="kw">break</span>
+
+<span class="skw">wait</span>(<img src="1533395685525.png" />)
+<span class="skw">click</span>(Pattern(<img src="1533395685525.png" />).targetOffset(<span class="dig">317</span>,<span class="dig">1</span>))
+<span class="skw">click</span>(<img src="1533395758757.png" />)
+</pre>
+</body>
+</html>
