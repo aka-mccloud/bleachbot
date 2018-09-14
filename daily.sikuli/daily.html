@@ -1,0 +1,161 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>daily.sikuli</h2> <a href="daily.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+game = Region(<span class="dig">92</span>,<span class="dig">195</span>,<span class="dig">1249</span>,<span class="dig">650</span>)
+
+<span class="kw">def</span> salary(game):
+    game.<span class="skw">click</span>(<img src="1536479502667.png" />)
+    character_dialog = Region(<span class="dig">430</span>,<span class="dig">313</span>,<span class="dig">577</span>,<span class="dig">430</span>)
+    character_dialog.<span class="skw">wait</span>(<img src="1536479541520.png" />)
+    character_dialog.<span class="skw">click</span>()
+    character_dialog.<span class="skw">click</span>(Pattern(<img src="1536479721382.png" />).targetOffset(<span class="dig">15</span>,<span class="dig">0</span>))
+
+
+<span class="kw">def</span> vip(game):
+    game.<span class="skw">click</span>(<img src="1536479944813.png" />)
+    vip_dialog = Region(<span class="dig">325</span>,<span class="dig">267</span>,<span class="dig">695</span>,<span class="dig">472</span>)
+    vip_dialog.<span class="skw">wait</span>(<img src="1536479994942.png" />)
+    vip_dialog.<span class="skw">click</span>()
+    vip_dialog.<span class="skw">click</span>(Pattern(<img src="1536480032614.png" />).targetOffset(<span class="dig">15</span>,<span class="dig">0</span>))
+
+
+<span class="kw">def</span> shinigame_agent(game):
+    game.<span class="skw">click</span>(<img src="1536480137615.png" />)
+    shinigame_agent_dialog = Region(<span class="dig">444</span>,<span class="dig">237</span>,<span class="dig">712</span>,<span class="dig">437</span>)
+    shinigame_agent_dialog.<span class="skw">wait</span>(<img src="1536480174934.png" />)
+    shinigame_agent_dialog.<span class="skw">click</span>()
+    <span class="kw">if</span> (shinigame_agent_dialog.exists(<img src="1536480174934.png" />)):
+        shinigame_agent_dialog.<span class="skw">click</span>()
+    shinigame_agent_dialog.<span class="skw">click</span>(Pattern(<img src="1536480291500.png" />).targetOffset(<span class="dig">14</span>,<span class="dig">0</span>))
+
+
+<span class="kw">def</span> report(game):
+    game.<span class="skw">find</span>(<img src="1536421696300.png" />)
+    game.hover()
+    game.<span class="skw">find</span>(<img src="1536480494837.png" />)
+    game.<span class="skw">click</span>()
+
+    report_dialog = Region(<span class="dig">409</span>,<span class="dig">314</span>,<span class="dig">617</span>,<span class="dig">464</span>)
+    report_dialog.<span class="skw">wait</span>(<img src="1536480532644.png" />)
+    report_dialog.<span class="skw">click</span>()
+    report_dialog.<span class="skw">click</span>(Pattern(<img src="1536480291500.png" />).targetOffset(<span class="dig">14</span>,<span class="dig">0</span>))
+
+
+<span class="kw">def</span> shutara_store(game):
+    game.<span class="skw">click</span>(<img src="1536480662340.png" />)
+    shutara_store_dialog = Region(<span class="dig">388</span>,<span class="dig">304</span>,<span class="dig">655</span>,<span class="dig">432</span>)
+    shutara_store_dialog.<span class="skw">wait</span>(<img src="1536480735428.png" />)
+    shutara_store_dialog.<span class="skw">click</span>()
+    shutara_store_dialog.<span class="skw">click</span>(Pattern(<img src="1536480291500.png" />).targetOffset(<span class="dig">14</span>,<span class="dig">0</span>))
+
+
+<span class="kw">def</span> bond(game):
+    game.hover(<img src="1536481049649.png" />)
+    game.hover(<img src="1534061342651.png" />)
+    game.<span class="skw">click</span>(<img src="1536481159476.png" />)
+    bond_dialog = Region(<span class="dig">332</span>,<span class="dig">296</span>,<span class="dig">727</span>,<span class="dig">451</span>)
+    bond_dialog.<span class="skw">click</span>(<img src="1536481219935.png" />)
+    bond_dialog.<span class="skw">click</span>(<img src="1536481265419.png" />)
+    daily_trainig_dialog = Region(<span class="dig">552</span>,<span class="dig">387</span>,<span class="dig">277</span>,<span class="dig">253</span>)
+    daily_trainig_dialog.<span class="skw">click</span>(<img src="1536481358572.png" />)
+    daily_trainig_dialog.<span class="skw">click</span>(<img src="1536481385157.png" />)
+    bond_dialog.<span class="skw">click</span>(<img src="1536481385157.png" />)
+
+
+<span class="kw">def</span> duplicate_experience(game):
+    game.hover(<img src="1536421696300.png" />)
+    game.<span class="skw">click</span>(<img src="1536481554907.png" />)
+    game.<span class="skw">wait</span>(<img src="1536481667205.png" />)
+    duplicate_experience_dialog = Region(<span class="dig">370</span>,<span class="dig">284</span>,<span class="dig">697</span>,<span class="dig">483</span>)
+    <span class="skw">click</span>(Location(<span class="dig">719</span>, <span class="dig">505</span>))
+    attack_dialog = Region(<span class="dig">354</span>,<span class="dig">286</span>,<span class="dig">693</span>,<span class="dig">480</span>)
+    <span class="kw">while</span> attack_dialog.exists(Pattern(<img src="1536482137763.png" />).similar(<span class="dig">0.95</span>)):
+        attack_dialog.<span class="skw">click</span>()
+        report_dialog = Region(<span class="dig">613</span>,<span class="dig">440</span>,<span class="dig">184</span>,<span class="dig">110</span>)
+        report_dialog.<span class="skw">wait</span>(<img src="1536701486041.png" />, <span class="dig">180</span>)
+        report_dialog.<span class="skw">click</span>()
+
+    attack_dialog.<span class="skw">click</span>(<img src="1536481385157.png" />)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    duplicate_experience_dialog.<span class="skw">click</span>(<img src="1536481385157.png" />)
+
+
+<span class="cmt">#salary(game)</span>
+<span class="cmt">#vip(game)</span>
+<span class="cmt">#shinigame_agent(game)</span>
+<span class="cmt">#report(game)</span>
+<span class="cmt">#shutara_store(game)</span>
+bond(game)
+duplicate_experience(game)
+</pre>
+</body>
+</html>
