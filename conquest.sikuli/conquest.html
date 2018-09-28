@@ -1,0 +1,123 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>conquest.sikuli</h2> <a href="conquest.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">def</span> waitAny(images, time):
+    <span class="kw">for</span> t <span class="kw">in</span> range(time):
+        image = findBestList(images)
+        <span class="kw">if</span> image <span class="kw">is</span> <span class="kw">not</span> None:
+            <span class="kw">return</span> image
+        <span class="kw">else</span>:
+            <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="kw">else</span>:
+        <span class="kw">return</span> None
+
+
+<span class="kw">def</span> doCleanup():
+    <span class="skw">click</span>(<img src="1538132386528.png" />)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+
+    i = <span class="dig">0</span>
+    <span class="kw">while</span> exists(Pattern(<img src="1533754575036.png" />).similar(<span class="dig">0.80</span>).targetOffset(<span class="dig">0</span>,<span class="dig">122</span>)) <span class="kw">and</span> i &lt; <span class="dig">3</span>:
+        <span class="skw">click</span>()
+        <span class="skw">click</span>(<img src="1533842472749.png" />)
+        <span class="skw">click</span>(waitAny([<img src="1533489783564.png" />, <img src="1538135930753.png" />], <span class="dig">180</span>))
+        i += <span class="dig">1</span>
+
+
+<span class="kw">def</span> doConquest(conquest, difficulty):
+    <span class="skw">click</span>(conquest)
+    <span class="skw">click</span>(difficulty)
+    <span class="kw">if</span> exists(<img src="1533574629012-2.png" />):
+        <span class="skw">click</span>()
+
+    doCleanup()
+
+    <span class="skw">click</span>(<img src="1533153247035.png" />)
+    <span class="skw">click</span>(Pattern(<img src="1538136983838.png" />).targetOffset(<span class="dig">15</span>,-<span class="dig">1</span>))
+
+
+hover(<img src="1533067526354.png" />)
+hover(<img src="1534061342651.png" />)
+<span class="skw">click</span>(<img src="1533147124645.png" />)
+
+conquests = [
+        (Pattern(<img src="1533147154734.png" />).targetOffset(<span class="dig">0</span>,<span class="dig">140</span>), Pattern(<img src="1538132303896.png" />).similar(<span class="dig">0.85</span>)),
+        (Pattern(<img src="1538132636055.png" />).targetOffset(<span class="dig">8</span>,<span class="dig">133</span>), Pattern(<img src="1538132680592.png" />).similar(<span class="dig">0.80</span>)),
+        (Pattern(<img src="1538132807630.png" />).targetOffset(<span class="dig">0</span>,<span class="dig">134</span>), Pattern(<img src="1538132680592.png" />).similar(<span class="dig">0.80</span>))]
+
+<span class="kw">for</span> conquest <span class="kw">in</span> conquests:
+    doConquest(*conquest)
+
+<span class="skw">click</span>(Pattern(<img src="1538137875037.png" />).targetOffset(<span class="dig">15</span>,<span class="dig">0</span>))
+</pre>
+</body>
+</html>
