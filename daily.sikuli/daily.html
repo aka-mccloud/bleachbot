@@ -90,7 +90,7 @@ game = Region(<span class="dig">92</span>,<span class="dig">195</span>,<span cla
 
 <span class="kw">def</span> shinigame_agent(game):
     game.<span class="skw">click</span>(<img src="1536480137615.png" />)
-    shinigame_agent_dialog = Region(<span class="dig">444</span>,<span class="dig">237</span>,<span class="dig">712</span>,<span class="dig">437</span>)
+    shinigame_agent_dialog = Region(<span class="dig">448</span>,<span class="dig">242</span>,<span class="dig">713</span>,<span class="dig">437</span>)
     shinigame_agent_dialog.<span class="skw">wait</span>(<img src="1536480174934.png" />)
     shinigame_agent_dialog.<span class="skw">click</span>()
     <span class="kw">if</span> (shinigame_agent_dialog.exists(<img src="1536480174934.png" />)):
@@ -112,7 +112,7 @@ game = Region(<span class="dig">92</span>,<span class="dig">195</span>,<span cla
 
 <span class="kw">def</span> shutara_store(game):
     game.<span class="skw">click</span>(<img src="1536480662340.png" />)
-    shutara_store_dialog = Region(<span class="dig">388</span>,<span class="dig">304</span>,<span class="dig">655</span>,<span class="dig">432</span>)
+    shutara_store_dialog = Region(<span class="dig">392</span>,<span class="dig">311</span>,<span class="dig">655</span>,<span class="dig">429</span>)
     shutara_store_dialog.<span class="skw">wait</span>(<img src="1536480735428.png" />)
     shutara_store_dialog.<span class="skw">click</span>()
     shutara_store_dialog.<span class="skw">click</span>(Pattern(<img src="1536480291500.png" />).targetOffset(<span class="dig">14</span>,<span class="dig">0</span>))
@@ -125,7 +125,7 @@ game = Region(<span class="dig">92</span>,<span class="dig">195</span>,<span cla
     bond_dialog = Region(<span class="dig">332</span>,<span class="dig">296</span>,<span class="dig">727</span>,<span class="dig">451</span>)
     bond_dialog.<span class="skw">click</span>(<img src="1536481219935.png" />)
     bond_dialog.<span class="skw">click</span>(<img src="1536481265419.png" />)
-    daily_trainig_dialog = Region(<span class="dig">552</span>,<span class="dig">387</span>,<span class="dig">277</span>,<span class="dig">253</span>)
+    daily_trainig_dialog = Region(<span class="dig">556</span>,<span class="dig">394</span>,<span class="dig">278</span>,<span class="dig">253</span>)
     daily_trainig_dialog.<span class="skw">click</span>(<img src="1536481358572.png" />)
     daily_trainig_dialog.<span class="skw">click</span>(<img src="1536481385157.png" />)
     bond_dialog.<span class="skw">click</span>(<img src="1536481385157.png" />)
@@ -140,20 +140,19 @@ game = Region(<span class="dig">92</span>,<span class="dig">195</span>,<span cla
     attack_dialog = Region(<span class="dig">354</span>,<span class="dig">286</span>,<span class="dig">693</span>,<span class="dig">480</span>)
     <span class="kw">while</span> attack_dialog.exists(Pattern(<img src="1536482137763.png" />).similar(<span class="dig">0.95</span>)):
         attack_dialog.<span class="skw">click</span>()
-        report_dialog = Region(<span class="dig">613</span>,<span class="dig">440</span>,<span class="dig">184</span>,<span class="dig">110</span>)
-        report_dialog.<span class="skw">wait</span>(<img src="1536701486041.png" />, <span class="dig">180</span>)
-        report_dialog.<span class="skw">click</span>()
+        attack_dialog.<span class="skw">wait</span>(<img src="1536701486041.png" />, <span class="dig">180</span>)
+        attack_dialog.<span class="skw">click</span>()
 
     attack_dialog.<span class="skw">click</span>(<img src="1536481385157.png" />)
     <span class="skw">sleep</span>(<span class="dig">1</span>)
     duplicate_experience_dialog.<span class="skw">click</span>(<img src="1536481385157.png" />)
 
 
-<span class="cmt">#salary(game)</span>
-<span class="cmt">#vip(game)</span>
-<span class="cmt">#shinigame_agent(game)</span>
-<span class="cmt">#report(game)</span>
-<span class="cmt">#shutara_store(game)</span>
+salary(game)
+vip(game)
+shinigame_agent(game)
+report(game)
+shutara_store(game)
 bond(game)
 duplicate_experience(game)
 </pre>

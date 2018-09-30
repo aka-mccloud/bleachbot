@@ -18,7 +18,7 @@ def vip(game):
 
 def shinigame_agent(game):
     game.click("1536480137615.png")
-    shinigame_agent_dialog = Region(444,237,712,437)
+    shinigame_agent_dialog = Region(448,242,713,437)
     shinigame_agent_dialog.wait("1536480174934.png")
     shinigame_agent_dialog.click()
     if (shinigame_agent_dialog.exists("1536480174934.png")):
@@ -40,7 +40,7 @@ def report(game):
 
 def shutara_store(game):
     game.click("1536480662340.png")
-    shutara_store_dialog = Region(388,304,655,432)
+    shutara_store_dialog = Region(392,311,655,429)
     shutara_store_dialog.wait("1536480735428.png")
     shutara_store_dialog.click()
     shutara_store_dialog.click(Pattern("1536480291500.png").targetOffset(14,0))
@@ -53,7 +53,7 @@ def bond(game):
     bond_dialog = Region(332,296,727,451)
     bond_dialog.click("1536481219935.png")
     bond_dialog.click("1536481265419.png")
-    daily_trainig_dialog = Region(552,387,277,253)
+    daily_trainig_dialog = Region(556,394,278,253)
     daily_trainig_dialog.click("1536481358572.png")
     daily_trainig_dialog.click("1536481385157.png")
     bond_dialog.click("1536481385157.png")
@@ -68,20 +68,19 @@ def duplicate_experience(game):
     attack_dialog = Region(354,286,693,480)
     while attack_dialog.exists(Pattern("1536482137763.png").similar(0.95)):
         attack_dialog.click()
-        report_dialog = Region(613,440,184,110)
-        report_dialog.wait("1536701486041.png", 180)
-        report_dialog.click()
+        attack_dialog.wait("1536701486041.png", 180)
+        attack_dialog.click()
 
     attack_dialog.click("1536481385157.png")
     sleep(1)
     duplicate_experience_dialog.click("1536481385157.png")
     
 
-#salary(game)
-#vip(game)
-#shinigame_agent(game)
-#report(game)
-#shutara_store(game)
+salary(game)
+vip(game)
+shinigame_agent(game)
+report(game)
+shutara_store(game)
 bond(game)
 duplicate_experience(game)
 
