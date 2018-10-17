@@ -127,17 +127,15 @@ game = Region(<span class="dig">92</span>,<span class="dig">195</span>,<span cla
     game.hover(<img src="1536421696300.png" />)
     game.<span class="skw">click</span>(<img src="1536481554907.png" />)
     game.<span class="skw">wait</span>(<img src="1536481667205.png" />)
-    duplicate_experience_dialog = Region(<span class="dig">370</span>,<span class="dig">284</span>,<span class="dig">697</span>,<span class="dig">483</span>)
     <span class="skw">click</span>(Location(<span class="dig">719</span>, <span class="dig">505</span>))
-    attack_dialog = Region(<span class="dig">354</span>,<span class="dig">286</span>,<span class="dig">693</span>,<span class="dig">480</span>)
-    <span class="kw">while</span> attack_dialog.exists(Pattern(<img src="1536482137763.png" />).similar(<span class="dig">0.97</span>)):
-        attack_dialog.<span class="skw">click</span>()
-        attack_dialog.<span class="skw">wait</span>(<img src="1536701486041.png" />, <span class="dig">180</span>)
-        attack_dialog.<span class="skw">click</span>()
+    <span class="kw">while</span> exists(Pattern(<img src="1536482137763.png" />).similar(<span class="dig">0.97</span>)):
+        <span class="skw">click</span>()
+        <span class="skw">wait</span>(<img src="1536701486041.png" />, <span class="dig">180</span>)
+        <span class="skw">click</span>()
 
-    attack_dialog.<span class="skw">click</span>(<img src="1536481385157.png" />)
+    <span class="skw">click</span>(<img src="1536481385157.png" />)
     <span class="skw">sleep</span>(<span class="dig">1</span>)
-    duplicate_experience_dialog.<span class="skw">click</span>(<img src="1536481385157.png" />)
+    <span class="skw">click</span>(<img src="1536481385157.png" />)
 
 
 salary(game)

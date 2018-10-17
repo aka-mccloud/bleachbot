@@ -39,7 +39,7 @@ click("1533147124645.png")
 
 conquests = [
         (Pattern("1533147154734.png").targetOffset(0,140), Pattern("1538132303896.png").similar(0.85)), 
-        (Pattern("1538132636055.png").targetOffset(8,133), Pattern("1538132680592.png").similar(0.80)),
+        (Pattern("1538132636055.png").targetOffset(8,133), Pattern("1538132303896.png").similar(0.85)),
         (Pattern("1538132807630.png").targetOffset(0,134), Pattern("1538132680592.png").similar(0.80))]
 
 for conquest in conquests:

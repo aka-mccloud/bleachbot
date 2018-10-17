@@ -55,17 +55,15 @@ def duplicate_experience(game):
     game.hover("1536421696300.png")
     game.click("1536481554907.png")
     game.wait("1536481667205.png")
-    duplicate_experience_dialog = Region(370,284,697,483)
     click(Location(719, 505))
-    attack_dialog = Region(354,286,693,480)
-    while attack_dialog.exists(Pattern("1536482137763.png").similar(0.97)):
-        attack_dialog.click()
-        attack_dialog.wait("1536701486041.png", 180)
-        attack_dialog.click()
+    while exists(Pattern("1536482137763.png").similar(0.97)):
+        click()
+        wait("1536701486041.png", 180)
+        click()
 
-    attack_dialog.click("1536481385157.png")
+    click("1536481385157.png")
     sleep(1)
-    duplicate_experience_dialog.click("1536481385157.png")
+    click("1536481385157.png")
     
 
 salary(game)
