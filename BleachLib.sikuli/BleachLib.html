@@ -1,0 +1,128 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>BleachLib.sikuli</h2> <a href="BleachLib.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">import</span> os
+
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+
+<span class="kw">class</span> BleachApp:
+    <span class="kw">def</span> __init__(self):
+        self._app = None
+        self._url = None
+        self._urlPattern = Pattern(<img src="1540071070819-1.png" />).targetOffset(<span class="dig">25</span>,<span class="dig">0</span>)
+
+    <span class="kw">def</span> open(self):
+        self._url = os.popen(<span class="str">'/home/tuser/flashplayer/bleach.py'</span>).read().strip()
+        self._app = App.open(<span class="str">'/home/tuser/flashplayer/flashplayer'</span>)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+
+        <span class="kw">with</span> Region(self._app.window()):
+            paste(self._urlPattern, self._url)
+            <span class="skw">type</span>(Key.ENTER)
+
+
+    <span class="kw">def</span> restart(self):
+        self._app.close()
+        self._app.open()
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+
+        <span class="kw">with</span> Region(self._app.window()):
+            paste(self._urlPattern, self._url)
+            <span class="skw">type</span>(Key.ENTER)
+
+
+    <span class="kw">def</span> window(self):
+        <span class="kw">return</span> self._app.window()
+
+
+<span class="kw">def</span> waitAny(images, time=None):
+    <span class="kw">if</span> time <span class="kw">is</span> None:
+        time = <span class="dig">3</span>
+
+    <span class="kw">for</span> t <span class="kw">in</span> range(time):
+        image = findBestList(images)
+        <span class="kw">if</span> image <span class="kw">is</span> <span class="kw">not</span> None:
+            <span class="kw">return</span> image
+        <span class="kw">else</span>:
+            <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="kw">else</span>:
+        <span class="kw">return</span> None
+
+
+ButtonOk = <img src="1540118014191.png" />
+ButtonOk1 = <img src="1540132926413.png" />
+ButtonTake = <img src="1540106811662.png" />
+ButtonTakeAll = <img src="1540107964696.png" />
+ButtonBack = <img src="1540144870598.png" />
+</pre>
+</body>
+</html>

@@ -85,25 +85,25 @@ hover(<img src="1533067526354.png" />)
 hover(<img src="1534061342651.png" />)
 <span class="skw">click</span>(<img src="1533067560801.png" />)
 <span class="skw">click</span>(<img src="1533676709589.png" />)
-<span class="skw">click</span>(<img src="1533676724192.png" />)
+<span class="skw">click</span>(<img src="1540118014191.png" />)
 
 
-stages = [<img src="1533067606592.png" />, <img src="1533067821635.png" />, <img src="1533068039145.png" />, <img src="1533393889163.png" />, <img src="1533393901811.png" />, <img src="1533393910947.png" />, <img src="1533393919042.png" />, <img src="1533393929706.png" />, <img src="1533393950242.png" />, <img src="1533393960802.png" />, <img src="1533393970507.png" />, <img src="1533393997802.png" />, <img src="1533394009466.png" />, <img src="1533394019763.png" />, <img src="1533394030955.png" />]
+stages = [<img src="1533067606592.png" />, <img src="1533067821635.png" />, <img src="1533068039145.png" />, <img src="1533393889163.png" />, <img src="1533393901811.png" />, Pattern(<img src="1533393910947.png" />).similar(<span class="dig">0.75</span>), <img src="1533393919042.png" />, <img src="1533393929706.png" />, <img src="1533393950242.png" />, <img src="1533393960802.png" />, <img src="1533393970507.png" />, <img src="1533393997802.png" />, <img src="1533394009466.png" />, <img src="1533394019763.png" />, <img src="1533394030955.png" />]
 
 <span class="kw">for</span> stage <span class="kw">in</span> stages:
     <span class="kw">if</span> exists(stage):
         <span class="skw">click</span>(stage)
         <span class="skw">click</span>(<img src="1533067626777.png" />)
-        image = wait_for([<img src="1533505157162.png" />, <img src="1533395581996.png" />], <span class="dig">120</span>)
+        image = wait_for([<img src="1540107964696.png" />, <img src="1540132926413.png" />], <span class="dig">120</span>)
         <span class="kw">if</span> image <span class="kw">is</span> <span class="kw">not</span> None:
-            <span class="kw">if</span> image == <img src="1533395581996.png" />:
+            <span class="kw">if</span> image == <img src="1540132926413.png" />:
                 <span class="skw">click</span>(image)
                 <span class="kw">break</span>
 
-            <span class="kw">if</span> image == <img src="1533505157162.png" />:
+            <span class="kw">if</span> image == <img src="1540107964696.png" />:
                 <span class="skw">click</span>(image)
                 <span class="skw">click</span>(<img src="1533068223577.png" />)
-                <span class="skw">click</span>(<img src="1533505344979.png" />)
+                <span class="skw">click</span>(<img src="1540118014191.png" />)
         <span class="kw">else</span>:
             <span class="kw">break</span>
 

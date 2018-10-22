@@ -70,29 +70,23 @@
 <h2>homestead.sikuli</h2> <a href="homestead.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
-<span class="skw">click</span>(<img src="1533503315964.png" />)
-<span class="cmt">#wait("1533071968204.png")</span>
-<span class="cmt">#click("1533071968204.png")</span>
-<span class="cmt">#wait("1533072007814.png")</span>
-<span class="cmt">#click("1533072007814.png")</span>
-<span class="cmt">#wait("1533072032853.png")</span>
-<span class="cmt">#click("1533072032853.png")</span>
+<span class="kw">def</span> doKonso(times):
+    <span class="kw">for</span> i <span class="kw">in</span> range(times):
+        <span class="skw">wait</span>(<img src="1533064132760.png" />)
+        <span class="skw">click</span>()
+        <span class="skw">wait</span>(<img src="1540107964696.png" />, <span class="dig">30</span>)
+        <span class="skw">click</span>()
 
-<span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">8</span>):
-    <span class="skw">wait</span>(<img src="1533064132760.png" />)
-    <span class="skw">click</span>(<img src="1533064132760.png" />)
-    <span class="skw">wait</span>(<img src="1533503662767.png" />, <span class="dig">30</span>)
-    <span class="skw">click</span>(<img src="1533503662767.png" />)
 
+<span class="skw">click</span>(<img src="1540115374519.png" />)
+
+
+doKonso(<span class="dig">8</span>)
 <span class="skw">click</span>(Pattern(<img src="1533064940424.png" />).targetOffset(<span class="dig">9</span>,<span class="dig">0</span>))
-<span class="skw">wait</span>(<img src="1533503856094.png" />)
-<span class="skw">click</span>(Pattern(<img src="1533503856094.png" />).targetOffset(<span class="dig">50</span>,<span class="dig">0</span>))
+<span class="skw">wait</span>(Pattern(<img src="1540115164588.png" />).similar(<span class="dig">0.75</span>).targetOffset(<span class="dig">50</span>,<span class="dig">0</span>))
+<span class="skw">click</span>(Pattern(<img src="1540115164588.png" />).similar(<span class="dig">0.75</span>).targetOffset(<span class="dig">50</span>,<span class="dig">0</span>))
 
-<span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">8</span>):
-    <span class="skw">wait</span>(<img src="1533064132760.png" />)
-    <span class="skw">click</span>(<img src="1533064132760.png" />)
-    <span class="skw">wait</span>(<img src="1533503662767.png" />, <span class="dig">30</span>)
-    <span class="skw">click</span>(<img src="1533503662767.png" />)
+doKonso(<span class="dig">8</span>)
 
 <span class="skw">click</span>(<img src="1533064682568.png" />)
 </pre>

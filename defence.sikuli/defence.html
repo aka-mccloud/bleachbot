@@ -70,31 +70,16 @@
 <h2>defence.sikuli</h2> <a href="defence.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
-<span class="kw">def</span> waitAny(images, time=None):
-    <span class="kw">if</span> time <span class="kw">is</span> None:
-        time = <span class="dig">3</span>
-
-    <span class="kw">for</span> t <span class="kw">in</span> range(time):
-        image = findBestList(images)
-        <span class="kw">if</span> image <span class="kw">is</span> <span class="kw">not</span> None:
-            <span class="kw">return</span> image
-        <span class="kw">else</span>:
-            <span class="skw">sleep</span>(<span class="dig">1</span>)
-    <span class="kw">else</span>:
-        <span class="kw">return</span> None
+<span class="kw">from</span> BleachLib <span class="kw">import</span> *
 
 <span class="kw">while</span> True:
+    <span class="kw">if</span> exists(<img src="1540063309133.png" />):
+        waitVanish(<img src="1540063309133.png" />)
     <span class="skw">click</span>(waitAny([Pattern(<img src="1533152013124.png" />).similar(<span class="dig">0.95</span>), Pattern(<img src="1533843844994.png" />).similar(<span class="dig">0.90</span>)], <span class="dig">60</span>))
     <span class="skw">sleep</span>(<span class="dig">2</span>)
 
-    <span class="kw">if</span> exists(<img src="1533497076504.png" />):
-        <span class="skw">click</span>()
-
-    <span class="kw">if</span> exists(<img src="1533152531028.png" />):
-        <span class="skw">click</span>()
-
-    <span class="skw">wait</span>(<img src="1533152084739.png" />, <span class="dig">180</span>)
-    <span class="skw">click</span>()
+    <span class="skw">click</span>(waitAny([<img src="1533497076504.png" />, <img src="1533152531028.png" />]))
+    <span class="skw">click</span>(waitAny([ButtonOk1, ButtonTakeAll], <span class="dig">180</span>))
 </pre>
 </body>
 </html>

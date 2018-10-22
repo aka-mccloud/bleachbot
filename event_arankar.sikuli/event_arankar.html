@@ -70,14 +70,26 @@
 <h2>event_arankar.sikuli</h2> <a href="event_arankar.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
+<span class="kw">import</span> os
+
+url = os.popen(<span class="str">'/home/tuser/flashplayer/bleach.py'</span>).read().strip()
+app = App.open(<span class="str">'/home/tuser/flashplayer/flashplayer'</span>)
+
+paste(Pattern(<img src="1540071070819.png" />).targetOffset(<span class="dig">25</span>,<span class="dig">0</span>), url)
+<span class="skw">type</span>(Key.ENTER)
+
+
 <span class="kw">while</span> True:
     <span class="skw">wait</span>(<img src="1533463475062.png" />, <span class="dig">60</span>)
     hover()
     <span class="skw">click</span>(<img src="1533463489206.png" />)
-    <span class="skw">wait</span>(<img src="1535883197229.png" />)
+    <span class="skw">wait</span>(<img src="1540116621338.png" />)
     <span class="skw">click</span>()
     <span class="skw">wait</span>(<img src="1535883528907.png" />,<span class="dig">90</span>)
-    <span class="skw">click</span>(<img src="1533314310629.png" />)
+    app.close()
+    app.open()
+    paste(Pattern(<img src="1540071070819.png" />).targetOffset(<span class="dig">25</span>,<span class="dig">0</span>), url)
+    <span class="skw">type</span>(Key.ENTER)
 </pre>
 </body>
 </html>

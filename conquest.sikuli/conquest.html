@@ -82,21 +82,22 @@
 
 
 <span class="kw">def</span> doCleanup():
-    <span class="skw">click</span>(<img src="1538132386528.png" />)
+    <span class="skw">click</span>(<img src="1540133636954.png" />)
     <span class="skw">sleep</span>(<span class="dig">1</span>)
 
     i = <span class="dig">0</span>
     <span class="kw">while</span> exists(Pattern(<img src="1533754575036.png" />).similar(<span class="dig">0.80</span>).targetOffset(<span class="dig">0</span>,<span class="dig">122</span>)) <span class="kw">and</span> i &lt; <span class="dig">3</span>:
         <span class="skw">click</span>()
         <span class="skw">click</span>(<img src="1533842472749.png" />)
-        <span class="skw">click</span>(waitAny([<img src="1533489783564.png" />, <img src="1538135930753.png" />], <span class="dig">180</span>))
+        <span class="skw">wait</span>(<img src="1540107964696.png" />, <span class="dig">180</span>)
+        <span class="skw">click</span>()
         i += <span class="dig">1</span>
 
 
 <span class="kw">def</span> doConquest(conquest, difficulty):
     <span class="skw">click</span>(conquest)
     <span class="skw">click</span>(difficulty)
-    <span class="kw">if</span> exists(<img src="1533574629012-2.png" />):
+    <span class="kw">if</span> exists(<img src="1540118014191.png" />):
         <span class="skw">click</span>()
 
     doCleanup()
@@ -110,7 +111,7 @@ hover(<img src="1534061342651.png" />)
 <span class="skw">click</span>(<img src="1533147124645.png" />)
 
 conquests = [
-        (Pattern(<img src="1533147154734.png" />).targetOffset(<span class="dig">0</span>,<span class="dig">140</span>), Pattern(<img src="1538132303896.png" />).similar(<span class="dig">0.85</span>)),
+        (Pattern(<img src="1533147154734.png" />).targetOffset(<span class="dig">0</span>,<span class="dig">145</span>), Pattern(<img src="1538132303896.png" />).similar(<span class="dig">0.85</span>)),
         (Pattern(<img src="1538132636055.png" />).targetOffset(<span class="dig">8</span>,<span class="dig">133</span>), Pattern(<img src="1538132303896.png" />).similar(<span class="dig">0.85</span>)),
         (Pattern(<img src="1538132807630.png" />).targetOffset(<span class="dig">0</span>,<span class="dig">134</span>), Pattern(<img src="1538132680592.png" />).similar(<span class="dig">0.80</span>))]
 

@@ -1,25 +1,19 @@
-click("1533503315964.png")
-#wait("1533071968204.png")
-#click("1533071968204.png")
-#wait("1533072007814.png")
-#click("1533072007814.png")
-#wait("1533072032853.png")
-#click("1533072032853.png")
+def doKonso(times):
+    for i in range(times):
+        wait("1533064132760.png")
+        click()
+        wait("1540107964696.png", 30)
+        click()
 
-for i in range(8):
-    wait("1533064132760.png")
-    click("1533064132760.png")
-    wait("1533503662767.png", 30)
-    click("1533503662767.png")
 
+click("1540115374519.png")
+
+
+doKonso(8)
 click(Pattern("1533064940424.png").targetOffset(9,0))
-wait("1533503856094.png")
-click(Pattern("1533503856094.png").targetOffset(50,0))
+wait(Pattern("1540115164588.png").similar(0.75).targetOffset(50,0))
+click(Pattern("1540115164588.png").similar(0.75).targetOffset(50,0))
 
-for i in range(8):
-    wait("1533064132760.png")
-    click("1533064132760.png")
-    wait("1533503662767.png", 30)
-    click("1533503662767.png")
+doKonso(8)
 
 click("1533064682568.png")

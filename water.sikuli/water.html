@@ -72,19 +72,17 @@
 <pre class="sikuli-code">
 hover(<img src="1533067526354.png" />)
 <span class="skw">click</span>(<img src="1533072169963.png" />)
-<span class="skw">wait</span>(Pattern(<img src="1533504305988.png" />).similar(<span class="dig">0.98</span>).targetOffset(<span class="dig">0</span>,<span class="dig">53</span>),<span class="dig">5</span>)
-<span class="cmt">#wait(Pattern("1535612867958.png").targetOffset(5,48),5)</span>
-<span class="skw">click</span>()
-
-
+<span class="skw">wait</span>(<img src="1540115941690.png" />, <span class="dig">5</span>)
+startButtons = findAll(<img src="1540115941690.png" />)
+startButtons = sorted(startButtons, key=<span class="kw">lambda</span> x: x.getX())
+<span class="skw">click</span>(startButtons[<span class="dig">1</span>])
 
 <span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">15</span>):
-    <span class="skw">wait</span>(<img src="1533072308260.png" />)
-    <span class="skw">click</span>()
-    <span class="skw">wait</span>(<img src="1533503662767.png" />, <span class="dig">120</span>)
+    <span class="skw">click</span>(Pattern(<img src="1540115894036.png" />).similar(<span class="dig">0.90</span>))
+    <span class="skw">wait</span>(<img src="1540107964696.png" />, <span class="dig">120</span>)
     <span class="skw">click</span>()
 
-<span class="skw">wait</span>(<img src="1533072504804.png" />)
+<span class="skw">wait</span>(Pattern(<img src="1533072504804.png" />).targetOffset(<span class="dig">53</span>,<span class="dig">0</span>))
 <span class="skw">click</span>()
 <span class="skw">click</span>(Pattern(<img src="1533072597020.png" />).targetOffset(<span class="dig">30</span>,<span class="dig">0</span>))
 </pre>

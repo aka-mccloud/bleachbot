@@ -70,6 +70,8 @@
 <h2>campaign.sikuli</h2> <a href="campaign.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
+<span class="kw">from</span> BleachLib <span class="kw">import</span> *
+
 <span class="kw">def</span> waitAny(images, time=None):
     <span class="kw">if</span> time <span class="kw">is</span> None:
         time = <span class="dig">3</span>
@@ -85,10 +87,12 @@
 
 
 <span class="kw">while</span> True:
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
     <span class="skw">click</span>(Pattern(<img src="1533754575036.png" />).similar(<span class="dig">0.80</span>).targetOffset(<span class="dig">0</span>,<span class="dig">122</span>))
 <span class="cmt">#    click(Pattern("1536007162836.png").targetOffset(0,65))</span>
     <span class="skw">click</span>(waitAny([<img src="1533754638760.png" />, <img src="1533842472749.png" />]))
-    <span class="skw">click</span>(waitAny([<img src="1533489783564.png" />, <img src="1539614745982.png" />], <span class="dig">180</span>))
+    <span class="skw">wait</span>(ButtonTakeAll, <span class="dig">180</span>)
+    <span class="skw">click</span>(ButtonTakeAll)
 </pre>
 </body>
 </html>
