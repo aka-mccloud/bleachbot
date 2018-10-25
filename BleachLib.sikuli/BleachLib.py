@@ -51,3 +51,8 @@ ButtonOk1 = "1540132926413.png"
 ButtonTake = "1540106811662.png"
 ButtonTakeAll = "1540107964696.png"
 ButtonBack = "1540144870598.png"
+ButtonParticipate = "1540116621338.png"
+
+MenuDailyActive = "1533463475062.png"
+MenuDailyEventsActive = "1533463489206.png"
+MenuFight = "1533067526354.png"

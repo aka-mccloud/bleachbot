@@ -74,41 +74,34 @@
 
 <span class="kw">def</span> salary():
     <span class="skw">click</span>(<img src="1536479502667.png" />)
-    <span class="skw">wait</span>(ButtonTake)
-    <span class="skw">click</span>()
+    <span class="skw">click</span>(ButtonTake)
     <span class="skw">click</span>(Pattern(<img src="1536479721382.png" />).targetOffset(<span class="dig">15</span>,<span class="dig">0</span>))
 
 
 <span class="kw">def</span> vip():
     <span class="skw">click</span>(<img src="1540107098080.png" />)
-    <span class="skw">wait</span>(<img src="1540107123857.png" />)
-    <span class="skw">click</span>()
+    <span class="skw">click</span>(<img src="1540107123857.png" />)
     <span class="skw">click</span>(Pattern(<img src="1536480032614.png" />).targetOffset(<span class="dig">15</span>,<span class="dig">0</span>))
 
 
 <span class="kw">def</span> shinigame_agent():
     <span class="skw">click</span>(<img src="1540107144249.png" />)
-    <span class="skw">wait</span>(<img src="1540107167504.png" />)
-    <span class="skw">click</span>()
-    <span class="kw">if</span> (exists(<img src="1540107167504.png" />)):
-        <span class="skw">click</span>()
+    <span class="skw">click</span>(<img src="1540107167504.png" />)
+    <span class="cmt">#if (exists("1540107167504.png")):</span>
+    <span class="cmt">#    click("1540107167504.png")</span>
     <span class="skw">click</span>(Pattern(<img src="1536480291500.png" />).targetOffset(<span class="dig">14</span>,<span class="dig">0</span>))
 
 
 <span class="kw">def</span> report():
-    <span class="skw">find</span>(<img src="1536421696300.png" />)
-    hover()
-    <span class="skw">find</span>(<img src="1536480494837.png" />)
-    <span class="skw">click</span>()
-    <span class="skw">wait</span>(<img src="1540107201899.png" />)
-    <span class="skw">click</span>()
+    hover(<img src="1536421696300.png" />)
+    <span class="skw">click</span>(<img src="1536480494837.png" />)
+    <span class="skw">click</span>(<img src="1540107201899.png" />)
     <span class="skw">click</span>(Pattern(<img src="1536480291500.png" />).targetOffset(<span class="dig">14</span>,<span class="dig">0</span>))
 
 
 <span class="kw">def</span> shutara_store():
     <span class="skw">click</span>(<img src="1536480662340.png" />)
-    <span class="skw">wait</span>(<img src="1540107225787.png" />)
-    <span class="skw">click</span>()
+    <span class="skw">click</span>(<img src="1540107225787.png" />)
     <span class="skw">click</span>(Pattern(<img src="1536480291500.png" />).targetOffset(<span class="dig">14</span>,<span class="dig">0</span>))
 
 
@@ -132,7 +125,7 @@
     <span class="kw">while</span> exists(Pattern(<img src="1540107712829.png" />).similar(<span class="dig">0.97</span>)):
         <span class="skw">click</span>()
         <span class="skw">wait</span>(ButtonTakeAll, <span class="dig">180</span>)
-        <span class="skw">click</span>()
+        <span class="skw">click</span>(ButtonTakeAll)
 
     <span class="skw">click</span>(<img src="1536481385157.png" />)
     <span class="skw">sleep</span>(<span class="dig">1</span>)
@@ -172,9 +165,9 @@
 <span class="cmt">#report()</span>
 <span class="cmt">#shutara_store()</span>
 <span class="cmt">#bond()</span>
-<span class="cmt">#duplicate_experience()</span>
-<span class="cmt">#pet()</span>
-<span class="cmt">#homestead()</span>
+duplicate_experience()
+pet()
+homestead()
 beauty()
 </pre>
 </body>

@@ -11,7 +11,7 @@
 #sleep(20)
 
 
-for i in range(8):
+for i in range(13):
     sleep(3)
     wait("1533668215827.png", 30)
     click("1533668215827.png")

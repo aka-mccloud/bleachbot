@@ -1,15 +1,13 @@
-game = Region(92,195,1249,650)
+from BleachLib import *
 
-game.find("1536421696300.png")
-game.hover()
-game.find("1533463489206.png")
-game.click()
-events_dialog = Region(411,299,616,457)
+app = BleachApp()
+app.open()
 
-events_dialog.click("1536424551889.png")
-
-wait("1539102928358.png", 60)
+wait(MenuDailyActive, 60)
+hover(MenuDailyActive)
+wait(MenuDailyEventsActive)
+click(MenuDailyEventsActive)
+click(ButtonParticipate)
+wait("1539102928358.png", 5)
 waitVanish("1539102928358.png", 60)
-
-stats = Region(1176,347,161,175)
-stats.click(Pattern("1536424621014.png").targetOffset(-21,-1))
+click(Pattern("1540314207146.png").targetOffset(-23,0))

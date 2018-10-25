@@ -2,41 +2,34 @@ from BleachLib import *
 
 def salary():
     click("1536479502667.png")
-    wait(ButtonTake)
-    click()
+    click(ButtonTake)
     click(Pattern("1536479721382.png").targetOffset(15,0))
 
 
 def vip():
     click("1540107098080.png")
-    wait("1540107123857.png")
-    click()
+    click("1540107123857.png")
     click(Pattern("1536480032614.png").targetOffset(15,0))
 
 
 def shinigame_agent():
     click("1540107144249.png")
-    wait("1540107167504.png")
-    click()
-    if (exists("1540107167504.png")):
-        click()
+    click("1540107167504.png")
+    #if (exists("1540107167504.png")):
+    #    click("1540107167504.png")
     click(Pattern("1536480291500.png").targetOffset(14,0))
 
 
 def report():
-    find("1536421696300.png")
-    hover()
-    find("1536480494837.png")
-    click()
-    wait("1540107201899.png")
-    click()
+    hover("1536421696300.png")
+    click("1536480494837.png")
+    click("1540107201899.png")
     click(Pattern("1536480291500.png").targetOffset(14,0))
     
 
 def shutara_store():
     click("1536480662340.png")
-    wait("1540107225787.png")
-    click()
+    click("1540107225787.png")
     click(Pattern("1536480291500.png").targetOffset(14,0))
 
 
@@ -60,7 +53,7 @@ def duplicate_experience():
     while exists(Pattern("1540107712829.png").similar(0.97)):
         click()
         wait(ButtonTakeAll, 180)
-        click()
+        click(ButtonTakeAll)
 
     click("1536481385157.png")
     sleep(1)
@@ -100,7 +93,7 @@ def beauty():
 #report()
 #shutara_store()
 #bond()
-#duplicate_experience()
-#pet()
-#homestead()
+duplicate_experience()
+pet()
+homestead()
 beauty()

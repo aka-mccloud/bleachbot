@@ -70,21 +70,19 @@
 <h2>guild_war.sikuli</h2> <a href="guild_war.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
-game = Region(<span class="dig">92</span>,<span class="dig">195</span>,<span class="dig">1249</span>,<span class="dig">650</span>)
+<span class="kw">from</span> BleachLib <span class="kw">import</span> *
 
-game.<span class="skw">find</span>(<img src="1536421696300.png" />)
-game.hover()
-game.<span class="skw">find</span>(<img src="1533463489206.png" />)
-game.<span class="skw">click</span>()
-events_dialog = Region(<span class="dig">411</span>,<span class="dig">299</span>,<span class="dig">616</span>,<span class="dig">457</span>)
+app = BleachApp()
+app.open()
 
-events_dialog.<span class="skw">click</span>(<img src="1536424551889.png" />)
-
-<span class="skw">wait</span>(<img src="1539102928358.png" />, <span class="dig">60</span>)
+<span class="skw">wait</span>(MenuDailyActive, <span class="dig">60</span>)
+hover(MenuDailyActive)
+<span class="skw">wait</span>(MenuDailyEventsActive)
+<span class="skw">click</span>(MenuDailyEventsActive)
+<span class="skw">click</span>(ButtonParticipate)
+<span class="skw">wait</span>(<img src="1539102928358.png" />, <span class="dig">5</span>)
 waitVanish(<img src="1539102928358.png" />, <span class="dig">60</span>)
-
-stats = Region(<span class="dig">1176</span>,<span class="dig">347</span>,<span class="dig">161</span>,<span class="dig">175</span>)
-stats.<span class="skw">click</span>(Pattern(<img src="1536424621014.png" />).targetOffset(-<span class="dig">21</span>,-<span class="dig">1</span>))
+<span class="skw">click</span>(Pattern(<img src="1540314207146.png" />).targetOffset(-<span class="dig">23</span>,<span class="dig">0</span>))
 </pre>
 </body>
 </html>

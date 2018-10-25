@@ -17,6 +17,7 @@ serverInfo = None
 serviceAccount = None
 flashAccount = None
 flashVars = None
+swfUrl = None
 
 def login():
 	global cookies
@@ -153,6 +154,7 @@ def getFlashVars():
 	global cookies
 	global flashAccount
 	global flashVars
+	global swfUrl
 
 	url = "https://sg.playxp.ru/platform/gamenet/play"
 	querystring = {
@@ -167,12 +169,17 @@ def getFlashVars():
 
 	tree = html.fromstring(page.content)
 	scripts = tree.xpath('//script[@type="text/javascript"]/text()')
-	flashvars = next(s for s in scripts if 'flashvars' in s)
-	flashvars = flashvars[flashvars.find('var flashvars='):]
-	flashvars = flashvars[flashvars.find('"')+1:]
-	flashvars = flashvars[:flashvars.find('"')]
+	script = next(s for s in scripts if 'xiSwfUrlStr' in s)
+	script = script[script.find('var xiSwfUrlStr ='):]
+	script = script[script.find('"')+1:]
+	swfUrl = script[:script.find('"')]
+	swfUrl = swfUrl.replace('https://', 'http://')
+
+	script = script[script.find('var flashvars='):]
+	script = script[script.find('"')+1:]
+	flashvars = script[:script.find('"')]
 	
-	flashVars = flashvars
+	flashVars = flashvars.replace('https%3A%2F%2F', 'http%3A%2F%2F')
 
 
 login()
@@ -183,6 +190,5 @@ getFlashAccount()
 getFlashVars()
 
 
-print('https://bleach.playxp.ru/espublic/2018092517/index.swf?' + flashVars)
+print(swfUrl + '?' + flashVars)
 
- 
