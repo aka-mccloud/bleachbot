@@ -85,7 +85,17 @@ def beauty():
         click("1540189187259.png")
     click(Pattern("1536480291500.png").targetOffset(14,0))
     
-    
+
+def dailyBonus():
+    hover(MenuDailyActive)
+    hover("1540464587017.png")
+    click("1540463991413.png")
+    click("1540464023360.png")
+    click("1540464065430.png")
+    bonuses = findAll("1540464415597.png")
+    for bonus in sorted(bonuses, key=lambda x: x.getX()):
+        click(bonus)
+
 
 #salary()
 #vip()
@@ -93,7 +103,8 @@ def beauty():
 #report()
 #shutara_store()
 #bond()
-duplicate_experience()
-pet()
-homestead()
-beauty()
+#duplicate_experience()
+#pet()
+#homestead()
+#beauty()
+dailyBonus()
