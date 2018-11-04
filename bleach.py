@@ -206,7 +206,7 @@ def getFlashVars():
 	script = script[script.find('var flashvars='):]
 	script = script[script.find('"')+1:]
 	flashvars = script[:script.find('"')]
-	
+
 	flashVars = flashvars.replace('https%3A%2F%2F', 'http%3A%2F%2F')
 
 
@@ -219,5 +219,12 @@ getFlashVars()
 
 #print(json.dumps(dict(urllib.parse.parse_qsl(flashVars)), indent=2))
 
-print(swfUrl + '?' + flashVars)
+#print(swfUrl + '?' + flashVars)
 
+flashVars = dict(urllib.parse.parse_qsl(flashVars))
+flashVars.update({
+	'cdnRoot': 'http://bleach.playxp.ru/espublic/'
+})
+flashVars = urllib.parse.urlencode(flashVars)
+
+print('http://bleach.playxp.ru/espublic/2018110213/index.swf' + '?' + flashVars)
