@@ -158,17 +158,38 @@
     <span class="skw">click</span>(Pattern(<img src="1536480291500.png" />).targetOffset(<span class="dig">14</span>,<span class="dig">0</span>))
 
 
+<span class="kw">def</span> dailyBonus():
+    hover(MenuDailyActive)
+    hover(<img src="1540464587017.png" />)
+    <span class="skw">click</span>(<img src="1540463991413.png" />)
+    <span class="skw">click</span>(<img src="1540464023360.png" />)
+    <span class="skw">click</span>(<img src="1540464065430.png" />)
+    bonuses = findAll(<img src="1540464415597.png" />)
+    <span class="kw">for</span> bonus <span class="kw">in</span> sorted(bonuses, key=<span class="kw">lambda</span> x: x.getX()):
+        <span class="skw">click</span>(bonus)
+    <span class="skw">click</span>(<img src="1536481385157.png" />)
 
-<span class="cmt">#salary()</span>
-<span class="cmt">#vip()</span>
-<span class="cmt">#shinigame_agent()</span>
-<span class="cmt">#report()</span>
-<span class="cmt">#shutara_store()</span>
-<span class="cmt">#bond()</span>
+
+salary()
+vip()
+shinigame_agent()
+report()
+shutara_store()
+bond()
 duplicate_experience()
 pet()
 homestead()
 beauty()
+dailyBonus()
+
+<span class="cmt">#app = BleachApp()</span>
+<span class="cmt">#app.open()</span>
+
+<span class="cmt">#wait(MenuFight, 30)</span>
+<span class="cmt">#print getLastMatch()</span>
+<span class="cmt">#hover(getLastMatch())</span>
+<span class="cmt">#click("1540484992079.png")</span>
+
 </pre>
 </body>
 </html>

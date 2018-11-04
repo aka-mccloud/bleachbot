@@ -11,7 +11,7 @@ while True:
     wait("1533463475062.png", 60)
     hover()
     click("1533463489206.png")
-    wait("1540116621338.png")
+    wait("1540116621338.png",5)
     click()
     wait("1535883528907.png",90)
     app.close()
