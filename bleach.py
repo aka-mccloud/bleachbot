@@ -5,9 +5,14 @@ import json
 import requests
 import random
 import urllib
+import urllib3
 
 from lxml import html
 from datetime import datetime
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+SERVER = 'S40'
 
 cookies = None
 loginKey = None
@@ -150,6 +155,29 @@ def getFlashAccount():
 	flashAccount = dict(urllib.parse.parse_qsl(serversUrl))
 
 
+def getServerId(serverName):
+	global cookies
+	global flashAccount
+
+	url = "https://sg.playxp.ru/platform/gamenet/serverlist"
+	querystring = {
+		'app': flashAccount['app'],
+		'game': flashAccount['game'],
+		'userId': flashAccount['userId'],
+		'sign': flashAccount['sign']
+	}
+
+	page = requests.get(url, params=querystring, cookies=cookies)
+
+	tree = html.fromstring(page.content)
+	servers = tree.xpath('//div[@class="server-box server-list"]/ul/li/a/i')
+	server = next(s for s in servers if serverName in s.tail)
+	server = server.getparent()
+	match = re.match(r'^javascript:play\((\d+)\);$', server.attrib['href'])
+
+	return match[1]
+
+
 def getFlashVars():
 	global cookies
 	global flashAccount
@@ -162,10 +190,10 @@ def getFlashVars():
 		'game': flashAccount['game'],
 		'userId': flashAccount['userId'],
 		'sign': flashAccount['sign'],
-		'serverId': 7286
+		'serverId': getServerId(SERVER)
 	}
 
-	page = requests.get(url, params=querystring, cookies=cookies)
+	page = requests.get(url, params=querystring, cookies=cookies, verify=False)
 
 	tree = html.fromstring(page.content)
 	scripts = tree.xpath('//script[@type="text/javascript"]/text()')
@@ -189,6 +217,7 @@ getServiceAccount()
 getFlashAccount()
 getFlashVars()
 
+#print(json.dumps(dict(urllib.parse.parse_qsl(flashVars)), indent=2))
 
 print(swfUrl + '?' + flashVars)
 
